@@ -38,6 +38,8 @@ dLLM（LLaDA、Dream、Mercury、Gemini Diffusion、LLaDA 2.0…）用「整段�
 | [dipe-edge.md](hardware/dipe-edge.md) | DiPe: Real-Time Diffusion LLM Inference on Edge Devices for Planning Tasks（SenSys 2026 demo） | 無 | Jetson Orin NX 上量化 + 跨步資訊聚合的即時 dLLM 規劃示範 | 公開摘要無具體數字 |
 | [activation-concentration.md](hardware/activation-concentration.md) | Activation Concentration: Characterizing Column-Level Output Sparsity Across Diffusion Model Architectures | 2606.00567 | **影像/音訊/影片 diffusion，不含 dLLM**。column-level 稀疏才是硬體真正可用的稀疏；附對 dLLM 加速器的啟示 | element-level 稀疏高估可用稀疏最多 78 pp；cycle 減少最多 30.6%（UNet） |
 
+> 深入解析：[hardware/dart-deep-dive.md](hardware/dart-deep-dive.md) 逐步拆解 DART 的推論流程、flattened systolic array 的 GEMM 切法、partial sum 累加與 cycle 數（含 v1 全文的 Table II–IV）。
+
 > 額外搜尋（FPGA / ASIC / PIM / CIM + diffusion LLM）未找到其他專門針對 dLLM 的硬體加速器論文；DiffAxE、Diff-Acc、SD-Acc 等是影像 diffusion，HPIM / Pimba 等 PIM 是 AR LLM。截至 2026-09，dLLM 專用硬體仍是很新的題目。
 
 ### 2.2 推論框架與 serving 系統（`systems/`，9 篇）
